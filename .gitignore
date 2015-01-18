@@ -52,3 +52,8 @@ docs/_build/
 
 # PyBuilder
 target/
+
+*.jpg
+*.txt
+*.json
+config_bot.py
