@@ -4,7 +4,7 @@ from scrapy.contrib.linkextractors import LinkExtractor
 from scrapy.contrib.spiders import CrawlSpider, Rule
 
 from pyeng.items import PyengItem
-
+import pdb
 
 class Pyeng2Spider(CrawlSpider):
     name = 'pyeng_3'
@@ -17,5 +17,7 @@ class Pyeng2Spider(CrawlSpider):
 
     def parse_item(self, response):
         code= response.xpath("//pre/text()").extract()
+        #pdb.set_trace()
+        #print "".join(code).encode('utf-8').strip()
         with  open("code.txt", "a") as f:
-            f.write("".join(code))
+            f.write("".join(code).encode('utf-8').strip())
