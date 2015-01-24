@@ -1,53 +1,59 @@
 
 # coding: utf-8
 
-# In[17]:
+# In[8]:
 
 from selenium import webdriver
 from selenium.webdriver.common.keys import Keys
 
 
-# In[18]:
+# In[9]:
 
 driver = webdriver.Firefox()
 
 
-# In[19]:
+# In[10]:
 
 driver.get("http://pythonforengineers.com/articles/")
 
 
-# In[20]:
+# In[11]:
 
 elem = driver.find_element_by_name("s")
 
 
-# In[21]:
+# **Note**: A minor change below: I added more blogs on reddit, and the current blog slipped off the 1st page.
+# 
+# Now, could have just clicked the second page of the search, but that would have required extensive changes.
+# 
+# So I'm just changing the search term from *reddit* to *build reddit*.
 
-elem.send_keys("reddit")
+# In[12]:
+
+elem.send_keys("build reddit")
 
 
-# In[22]:
+# In[13]:
 
 elem.send_keys(Keys.RETURN)
 
 
-# In[23]:
+# In[14]:
 
 link = driver.find_element_by_link_text("Build a Reddit Bot Part 1")
 
 
-# In[24]:
+# In[15]:
 
 link.click()
 
 
-# In[25]:
+# In[16]:
 
 driver.close()
 
 
-# In[ ]:
+# In[16]:
 
 
 

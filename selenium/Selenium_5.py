@@ -6,9 +6,13 @@
 from selenium import webdriver
 from selenium.webdriver.common.keys import Keys
 
-# The file below must exist. If not, comment it out and add password manually.
-# Look at config_skel.py on how to add password
-from config_bot import *
+try:
+    # The file below must exist. If not, comment it out and add password manually.
+    # Look at config_skel.py on how to add password
+    from config_bot import *
+except:
+    print "File config_bot.py doesnt exist. Either create it based on config_skel.py, or comment above line and enter password manually"
+    exit(1)
 
 
 # In[22]:
@@ -43,7 +47,7 @@ button.click()
 
 # In[27]:
 
-driver.close()
+#driver.close()
 
 
 # In[ ]:
